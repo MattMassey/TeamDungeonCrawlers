@@ -7,6 +7,7 @@ this.fpsElement = document.getElementById('fps'),
 GAMESIZE = 768
 GRIDNUM = 12
 GRIDSIZE = GAMESIZE / GRIDNUM
+//gridsize is 64
 
 // States............................................................
 
@@ -41,6 +42,7 @@ function initializeImages() {
 background.src = 'img/basic_dungeon_room.png';
 runnerImage.src = 'img/earth_god_front.png';
 
+//onload occurs when object has been loaded
 background.onload = function (e) {
   startGame();
 };
@@ -57,9 +59,11 @@ drawRunner();
 }
 
 function drawBackground() {
+  //background gets drawn and placed on the canvas
 context.drawImage(background, 0, 0);
 }
 
+//will drawPlatform be used?
 function drawPlatform(data) {
 var platformTop = calculatePlatformTop(data.track);
 
@@ -76,8 +80,8 @@ context.fillRect  (data.left, platformTop, data.width, data.height);
 
 function drawRunner() {
 context.drawImage(runnerImage,
-  0,
- 0);
+  (GAMESIZE/2),
+ 250);
 }
 
 
@@ -106,4 +110,30 @@ setInterval(update, 10); //JavaScript must keep checking if you're deleting anyt
 
 function changeLevel() {
 
+}
+
+// Controls..........................................................
+window.onkeydown = function(e) {
+  var key = e.keyCode;
+
+  //A and left arrow
+  if (key === 65|| key === 37) {
+    //turnleft method here
+    //functions here should bind sprite to the movements    
+  }
+  //S and down arrow
+  else if(key === 83 || key === 40){
+    //turn down
+  }
+  //D and right arrow
+  else if(key === 68 || key === 39){
+    //turn right method here
+  }
+  //W and Up arrow
+  else if (key === 87 || key === 38){
+    //turn up
+  }
+  else if (key === 80){
+    //toggle pause here
+  }
 }
