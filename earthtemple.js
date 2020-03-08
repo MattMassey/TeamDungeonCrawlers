@@ -38,8 +38,8 @@ this.toastElement = document.getElementById('toast'),
 initializeImages();
 
 function initializeImages() {
-background.src = 'img/earth_temple_tempbg.png';
-runnerImage.src = 'img/link_temp.jfif';
+background.src = 'img/basic_dungeon_room.png';
+runnerImage.src = 'img/earth_god_front.png';
 
 background.onload = function (e) {
   startGame();
