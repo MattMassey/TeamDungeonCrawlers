@@ -85,31 +85,11 @@ context.drawImage(runnerImage,
 }
 
 
-// Level Transitions
-
-function mouseClick() {
-  window.addEventListener("mousemove", function(e) {
-    mouseX = e.pageX - canvas.offsetLeft;
-    mouseY = e.pageY - canvas.offsetTop; //this updates the mouse coordinates
-  });
-
-  if (typeof mousemove != "undefined") {
-    window.addEventListener("mousemove", mousemove);
-  }
-}
-
-function update() {
-  if (deleting) {
-      context.clearRect(0, 0, canvas.width, canvas.height);
-  }
-}
-
-update();
-setInterval(update, 10); //JavaScript must keep checking if you're deleting anything. You can decrease the interval for more frequent updating.
-
+// Level Transitions..............................................
 
 function changeLevel() {
-
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  draw();
 }
 
 // Controls..........................................................
